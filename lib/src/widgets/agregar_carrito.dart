@@ -3,7 +3,7 @@ import 'package:shoesapp/src/widgets/curtom_widgets.dart';
 
 class AgregarCarritoBoton extends StatelessWidget {
   final double monto;
-  AgregarCarritoBoton({required this.monto});
+  const AgregarCarritoBoton({super.key, required this.monto});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,11 @@ class AgregarCarritoBoton extends StatelessWidget {
         ),
         child: Row(
           children: <Widget>[
-            SizedBox(width: 20,),
-            Text('\$$monto', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
-            Spacer(),
-            BotonNaranja(texto: 'Add to cart'),
-            SizedBox(width: 20,)
+            const SizedBox(width: 20,),
+            Text('\$$monto', style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+            const Spacer(),
+            const BotonNaranja(texto: 'Add to cart'),
+            const SizedBox(width: 20,)
           ],
         ),
       ),

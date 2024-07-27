@@ -10,16 +10,16 @@ class CustomAppBar extends StatelessWidget {
       top: true,
       bottom: false,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Container(
-          margin: EdgeInsets.only(top: 30),
+          margin: const EdgeInsets.only(top: 30),
           width: double.infinity,
           /* height: 150, */
           child: Row(
             children: <Widget>[
-              Text(texto, style: TextStyle(fontSize: 30,fontWeight: FontWeight.w700),),
-              Spacer(),
-              Icon(Icons.search, size: 30,)
+              Text(texto, style: const TextStyle(fontSize: 30,fontWeight: FontWeight.w700),),
+              const Spacer(),
+              const Icon(Icons.search, size: 30,)
             ],
           ),
         ),

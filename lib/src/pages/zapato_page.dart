@@ -7,7 +7,7 @@ class ZapatoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     cambiarStatusDark();
-    return Scaffold(
+    return const Scaffold(
       /* body: CustomAppBar(texto: 'For You',) */
       /* body: ZapatoSizeProvider() */
       body: Column(

@@ -5,15 +5,15 @@ import 'package:shoesapp/src/pages/zapato_desc_page.dart';
 
 class ZapatoSizePreview extends StatelessWidget {
   final bool fullScreen;
-  const ZapatoSizePreview({
-     this.fullScreen: false
+  const ZapatoSizePreview({super.key, 
+     this.fullScreen = false
   });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         if(!fullScreen) {
-          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ZapatoDescPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const ZapatoDescPage()));
         }
       },
       child: Padding(
@@ -25,9 +25,9 @@ class ZapatoSizePreview extends StatelessWidget {
           width: double.infinity,
           height: fullScreen ? 420 : 430,
           decoration: BoxDecoration(
-            color: Color(0xffFFCF53),
+            color: const Color(0xffFFCF53),
             borderRadius: fullScreen 
-              ? BorderRadius.only(bottomLeft: Radius.circular(50),
+              ? const BorderRadius.only(bottomLeft: Radius.circular(50),
                                   bottomRight: Radius.circular(50),
                                   topLeft: Radius.circular(40),
                                   topRight: Radius.circular(40)) 
@@ -37,7 +37,7 @@ class ZapatoSizePreview extends StatelessWidget {
             children: <Widget>[
               // Zapato Con su sombra
               // TODO: Tallas
-              _ZapatoConSombra(),
+              const _ZapatoConSombra(),
               if(!fullScreen)
                 _ZapatoTallas()
             ],
@@ -53,7 +53,7 @@ class _ZapatoTallas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -84,37 +84,37 @@ class _TallaZapatoCaja extends StatelessWidget {
       },
       child: Container(
         alignment: Alignment.center,
-        child: Text('${numero.toString().replaceAll('.0', '')}', style: TextStyle(
-          color: (this.numero == zapatoModel.talla) ? Colors.white : Color(0xffF1A23A),
-          fontSize: 16,
-          fontWeight: FontWeight.bold
-        ),),
         width: 45,
         height: 45,
         decoration: BoxDecoration(
-          color: (this.numero == zapatoModel.talla) ? Color(0xffF1A23A) : Colors.white,
+          color: (numero == zapatoModel.talla) ? const Color(0xffF1A23A) : Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
-            if(this.numero == zapatoModel.talla)
-              BoxShadow( color: Color(0xffF1A23A), blurRadius: 10, offset: Offset(0, 5))
+            if(numero == zapatoModel.talla)
+              const BoxShadow( color: Color(0xffF1A23A), blurRadius: 10, offset: Offset(0, 5))
           ]
         ),
+        child: Text(numero.toString().replaceAll('.0', ''), style: TextStyle(
+          color: (numero == zapatoModel.talla) ? Colors.white : const Color(0xffF1A23A),
+          fontSize: 16,
+          fontWeight: FontWeight.bold
+        ),),
       ),
     );
   }
 }
 
 class _ZapatoConSombra extends StatelessWidget {
-  const _ZapatoConSombra({super.key});
+  const _ZapatoConSombra();
 
   @override
   Widget build(BuildContext context) {
     final zapatoModel = Provider.of<ZapatoModel>(context);
     return Padding(
-      padding: EdgeInsets.all(50),
+      padding: const EdgeInsets.all(50),
       child: Stack(
         children: <Widget>[
-          Positioned(
+          const Positioned(
             bottom: 20,
             right: 0,
             child: _ZapatoSombra()
@@ -140,7 +140,7 @@ class _ZapatoSombra extends StatelessWidget {
         height: 120,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(color: Color(0xffEAA14E), blurRadius: 40)
           ]
         ),

@@ -15,14 +15,13 @@ class ZapatoDescPage extends StatelessWidget {
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Hero(
+              const Hero(
                 tag: 'zapato-1', // Mismo identificador para tener la animacion
                 child: ZapatoSizePreview(
                   fullScreen: true
                 ),
               ),
               Positioned(top:80,child: FloatingActionButton(
-                child: Icon(Icons.chevron_left,color: Colors.white, size: 60,),
                 onPressed: () {
                   cambiarStatusDark();
                   Navigator.pop(context);
@@ -30,6 +29,7 @@ class ZapatoDescPage extends StatelessWidget {
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 highlightElevation: 0,
+                child: const Icon(Icons.chevron_left,color: Colors.white, size: 60,),
               ))
             ],
           ),
@@ -37,7 +37,7 @@ class ZapatoDescPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  ZapatoDescripcion(
+                  const ZapatoDescripcion(
                     titulo: 'Nike Air Max 720',
                     descripcion: "The Nike Air Max 720 goes bigger than ever before with Nike's taller Air unit yet, offering more air underfoot for unimaginable, all-day comfort. Has Air Max gone too far? We hope so.",
                   ),
@@ -59,12 +59,12 @@ class _BotonesLikeCartSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 30,),
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      margin: const EdgeInsets.symmetric(vertical: 30,),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          _BotonSombreado(Icon(Icons.star, color: Colors.red, size: 25)),
+          const _BotonSombreado(Icon(Icons.star, color: Colors.red, size: 25)),
           _BotonSombreado(Icon(Icons.add_shopping_cart, color: Colors.grey.withOpacity(0.4), size: 25)),
           _BotonSombreado(Icon(Icons.settings, color: Colors.grey.withOpacity(0.4), size: 25)),
         ],
@@ -82,7 +82,7 @@ class _BotonSombreado extends StatelessWidget {
     return Container(
       width: 55,
       height: 55,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
         boxShadow: [
@@ -98,8 +98,8 @@ class _ColoresYMas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 30),
       child: Row(
         children: <Widget>[
           Expanded(
@@ -135,7 +135,7 @@ class _BotonColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInLeft(
       delay: Duration(milliseconds: index * 100),
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       child: GestureDetector(
         onTap: () {
           final zapatoModel = Provider.of<ZapatoModel>(context, listen:false);
@@ -161,15 +161,15 @@ class _MontoBuyNow extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Container(
-        margin: EdgeInsets.only(top: 20, bottom: 20),
+        margin: const EdgeInsets.only(top: 20, bottom: 20),
         child: Row(
           children: <Widget>[
-            Text('\$180.0', style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold),),
-            Spacer(),
+            const Text('\$180.0', style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold),),
+            const Spacer(),
             Bounce(
-              delay: Duration(seconds: 1),
+              delay: const Duration(seconds: 1),
               from: 8,
-              child: BotonNaranja(
+              child: const BotonNaranja(
                 texto: 'Buy now', 
                 ancho: 120, 
                 alto: 40,
